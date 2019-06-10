@@ -1,0 +1,19 @@
+{
+  "name": "test-task",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/mongodb": "^3.1.28",
+    "typescript": "^3.5.1"
+  },
+  "scripts": {
+    "postinstall": "npm run build",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "start": "node dist",
+    "dev": "tsc --build && node --inspect dist"
+  },
+  "dependencies": {
+    "mongodb": "^3.2.7"
+  }
+}
