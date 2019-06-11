@@ -32,7 +32,7 @@ interface LogDocument {
   const dictionaryCollection = db.collection<LogDocument | any>(dictionaryCollectionName);
   const migrationCollection = db.collection<LogDocument | any>(migrationCollectionName);
 
-  const currentVersion = await migrationCollection.aggregate([
+  const { migrationVersion: currentVersion } = await migrationCollection.aggregate([
     {
       $group: {
         _id: '$_id',
